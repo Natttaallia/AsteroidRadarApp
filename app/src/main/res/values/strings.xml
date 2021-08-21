@@ -17,6 +17,11 @@
     <string name="astronomical_unit_explanation_button">Astronomical unit definition</string>
     <string name="potentially_hazardous_asteroid_image">Potentially hazardous asteroid image</string>
     <string name="not_hazardous_asteroid_image">Not hazardous asteroid image</string>
+    <string name="potentially_hazardous_asteroid_icon">Potentially hazardous asteroid icon</string>
+    <string name="not_hazardous_asteroid_icon">Not hazardous asteroid icon</string>
     <string name="this_is_nasa_s_picture_of_day_showing_nothing_yet">This is NASA\'s picture of day, showing nothing yet</string>
     <string name="nasa_picture_of_day_content_description_format">NASA\'s picture of day: %s</string>
+    <string name="detail_fragment">Asteroid Information</string>
+    <string name="help_content_description">Do you want to know more about astronomical unit (au)? Press this button</string>
+    <string name="data_from_cache">Bad Internet Connection. Data loaded from cache.</string>
 </resources>

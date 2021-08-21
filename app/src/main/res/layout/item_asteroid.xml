@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.udacity.asteroidradar.Asteroid" />
+        <variable
+            name="listener"
+            type="com.udacity.asteroidradar.ui.listeners.AsteroidClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> listener.onClick(data)}"
+        android:padding="16dp"
+        android:background="@color/app_background">
+
+        <TextView
+            android:id="@+id/asteroid_name"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/default_text_color"
+            android:text="@{data.codename}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="11111 (1111 AA11)" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_grey"
+            android:layout_marginTop="6dp"
+            android:text="@{data.closeApproachDate}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/asteroid_name"
+            tools:text="2021-08-21" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:statusIcon="@{data.potentiallyHazardous}"
+            tools:src="@drawable/ic_status_potentially_hazardous"
+            android:contentDescription="@{data.potentiallyHazardous ? @string/potentially_hazardous_asteroid_icon : @string/not_hazardous_asteroid_icon}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
