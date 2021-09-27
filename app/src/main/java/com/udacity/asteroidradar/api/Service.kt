@@ -3,6 +3,7 @@ package com.udacity.asteroidradar.api
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.udacity.asteroidradar.BuildConfig
 import com.udacity.asteroidradar.Constants
 import com.udacity.asteroidradar.PictureOfDay
 import kotlinx.coroutines.Deferred
@@ -26,12 +27,12 @@ interface AsteroidNasaService {
     fun getAsteroids(
         @Query("start_date") startDate: String = getToday(),
         @Query("end_date") endDate: String = getNextWeekDay(),
-        @Query("api_key") apiKey: String = Constants.API_KEY
+        @Query("api_key") apiKey: String = BuildConfig.NASA_API_KEY
     ): Deferred<ResponseBody>
 
     @GET("planetary/apod")
     fun getPictureOfDay(
-        @Query("api_key") apiKey: String = Constants.API_KEY
+        @Query("api_key") apiKey: String = BuildConfig.NASA_API_KEY
     ): Deferred<PictureOfDay>
 }
 
